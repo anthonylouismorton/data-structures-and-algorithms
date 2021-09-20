@@ -40,7 +40,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
   // Solution code here...
-  var total = arr.reduce(function(number, value, idx){
+  var total = arr.reduce(function(number, value){
     number = number + value.purchasePrice;
     return number;
   },0);
@@ -120,18 +120,16 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-const returnNames = (arr) => arr.reduce((number, person) => number.concat(person.name), []); 
-// {
-  // Solution code here...
-  // var newArr = []
-  // var name = arr.reduce((number, person) =>{
-  //    number = person.name;
+const returnNames = (arr) => 
+// arr.reduce((number, person) => number.concat(person.name), []); 
+{
+  var name = arr.reduce((number, person) =>{
+     return number.concat(person.name);
      
-  // },);
-  // newArr.push(name)
-  // return newArr;
+  },[]);
+  return name;
 
-// };
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -192,9 +190,8 @@ const characters = [
   },
 ];
 
-const countNumberOfChildren = (arr) => {
-  // Solution code here...
-};
+const countNumberOfChildren = (arr) => { 
+return arr.reduce((accumulator, parent) => (parent.children ? accumulator + parent.children.length : accumulator ),0)}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -206,6 +203,13 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
+  var average;
+  var total = arr.reduce(function(number, value){
+    number = number + value;
+    return number;
+  },0);
+  
+  return average = total/ arr.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -225,9 +229,9 @@ const isPrime = (value) => {
   return value > 1;
 };
 
-const countPrimeNumbers = (arr) => {
-  // Solution code here...
-};
+const countPrimeNumbers = (arr) => arr.reduce((bank, number) => {return isPrime(number) ? bank + 1 : bank},0);
+ 
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -268,9 +272,9 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const extractStat = (statName, arr) => {
+const extractStat = (statName, arr) => arr.reduce((bank, str) => {return str.stat.name === statName ? bank = str : bank},null)
   // Solution code here...
-};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
@@ -282,8 +286,11 @@ Write a function named extractChildren that, given the array of characters from 
 2) Then, uses reduce to return an array of all the children's names in the filtered array
 ------------------------------------------------------------------------------------------------ */
 
-const extractChildren = (arr) => {
+const extractChildren = (arr) => { 
   // Solution code here...
+  var newArr = arr.filter(person => person.name.includes('a'))
+    .reduce((bank, parent) => {return parent.children ? bank.concat(parent.children) : bank;},[]);
+    return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -340,31 +347,31 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return the total number of children', () => {
     expect(countNumberOfChildren(characters)).toStrictEqual(14);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return the average of the numbers in the array', () => {
     expect(calculateAverage([18, 290, 37, 4, 55, 16, 7, 85 ])).toStrictEqual(64);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should return a count of the prime numbers in the array', () => {
     expect(countPrimeNumbers([1, 2, 13, 64, 45, 56, 17, 8])).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should return any stats that match the input', () => {
     expect(extractStat('speed', snorlaxData.stats)).toStrictEqual({ stat: { url: 'https://pokeapi.co/api/v2/stat/6/', name: 'speed' }, effort: 5, baseStat: 30 });
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return an array containing the names of the children', () => {
     expect(extractChildren(characters)).toStrictEqual([ 'Robb', 'Sansa', 'Arya', 'Bran', 'Rickon', 'Drogon', 'Rhaegal', 'Viserion', 'Margaery', 'Loras' ]);
     expect(extractChildren(characters).length).toStrictEqual(10);
