@@ -20,15 +20,12 @@ Becomes:
 
 function transformToLis(obj){
   // Solution code here...
+  let newArr = [];
+  
   for(const [key, value] of Object.entries(obj)){
-    document.createElement("li")
-    li.innerHTML = `${key}: ${value}`
-    document.ol.appendChild(li);
-    //let list = `${key}: ${value}`
-    // return list
-    // console.log(list)
+    newArr.push(`<li>${key}: ${value}</li>`)
   }
-
+  return newArr;
   
 };
 
