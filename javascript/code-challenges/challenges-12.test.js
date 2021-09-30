@@ -6,9 +6,7 @@ CHALLENGE 1 - Review
 Write a function named replaceZeros that, given a string, uses Regex to replace all '0' with the word 'zero'.
 ------------------------------------------------------------------------------------------------ */
 
-const replaceZeros = (string) => {
-  // Solution code here...
-};
+const replaceZeros = (string) => string.replace(/0/g,'zero');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -18,9 +16,7 @@ Write a function named validatePin that uses a regular expression pattern to val
 If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePin = (pin) => {
-  // Solution code here...
-};
+const validatePin = (pin) => /^\d{4}$/.test(pin);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -58,7 +54,9 @@ Return either true or false.
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
 
-const validateEmail = (email) => /^[a-zA-z0-9]$/.test(email);
+const validateEmail = (email) => {
+  return /^\w+\.*\w+@\w*\.(net|com|org)$/g.test(email);
+}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -81,7 +79,9 @@ Your function should include a single regular expression pattern that matches an
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePhoneNumber = (phoneNumber) => /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
+const validatePhoneNumber = (phoneNumber) => {
+  return /^(\(\d{3}\)|\d{3})(\s|-)?\d{3}(\s|-)?\d{4}$/.test(phoneNumber);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
