@@ -19,15 +19,11 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-  // Solution code here...
-  for(const [key, value] of Object.entries(obj)){
-    document.createElement("li")
-    li.innerHTML = `${key}: ${value}`
-    document.ol.appendChild(li);
-    //let list = `${key}: ${value}`
-    // return list
-    // console.log(list)
-  }
+  var newArr = [];
+  Object.entries(obj).forEach(arr => {
+    arr[0] === 'name' ? newArr.push(`<li>name: ${arr[1]}</li>`) : newArr.push(`<li>age: ${arr[1]}</li>`);
+  });
+  return newArr;
 
   
 };
@@ -51,23 +47,10 @@ const count = (target, input) => {
   //     newArr.push(number)
   //   }
   // }
-  // return newArr.length;
-  // let newArr = []
-  // input.forEach(arr => {
-  //   arr.forEach((number) =>{
-  //     let targetNumber = arr.filter(x => x = input);
-  //     //console.log(targetNumber)
-  //   })
-  // });
-  // return newArr;
-  let count = 0;
-  input.forEach(arr => {
-    arr.forEach((number) =>{
-      if(number === target)
-      count++
-    })
-  });
+  var count = 0;
+  input.flat().filter(x => x === target ? count++ : count);
   return count;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,9 +87,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
-
-
+  let filtered = input.map(arr => arr.filtered(number => number % 5 === 0 && typeof(number) === 'number'));
+  let newArr = [];
+  for (let i = 0; i < filtered.length; i++){
+    newArr.push([]);
+    for (let j = 0; j <= filtered.length; j++){
+      if (filtered[i][j]) {
+        newArr[i].push(Math.pow(2, filtered[i][j]));
+      }
+    }
+  }
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -173,13 +164,17 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
-  let newArr = []
-  for(let i = 0; i < data.length; i++){
-    if(Object.values(data).includes('male')||Object.values(data).includes('female')){
-      console.log(data.name)
+  var newArr =[];
+  data.forEach((person, i, arr) => {
+    if(person.gender === 'male' || (person.gender ==='female')){
+      if(i === arr.length - 1){
+        newArr.push(`${person.name}`);
+      } else {
+        newArr.push(`${person.name} and `);
+      }
     }
-  }
-  //console.log(newArr)
+  });
+  return newArr.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -189,8 +184,8 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  let selectedCharacter = data.map(x => Math.min(x.height))
-  console.log(selectedCharacter)
+  var shortest = data.reduce((bank, current) => Number(bank.height) < Number(current.height) ? bank : current, 0);
+  return shortest.name;
   }
 
 /* ------------------------------------------------------------------------------------------------
