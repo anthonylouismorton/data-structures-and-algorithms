@@ -24,8 +24,6 @@ function transformToLis(obj){
     arr[0] === 'name' ? newArr.push(`<li>name: ${arr[1]}</li>`) : newArr.push(`<li>age: ${arr[1]}</li>`);
   });
   return newArr;
-
-  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -39,18 +37,9 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // let count = 0;
-  // for(let i = 0; i < input.length; i++){
-  //   for(let j = 0; j < column.length; j++){
-  //     let number = column.filter(x => x = target)
-      
-  //     newArr.push(number)
-  //   }
-  // }
-  var count = 0;
-  input.flat().filter(y => y === target ? count++ : count);
-  return count;
-
+  let count = 0;
+  input.flat().filter(x => x === target ? count++ : count)
+  return count
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,6 +88,7 @@ const divisibleByFiveTwoToThePower = (input) => {
   }
   return newArr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -164,6 +154,7 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+
   var newArr =[];
   data.forEach((person, i, arr) => {
     if(person.gender === 'male' || (person.gender ==='female')){
@@ -174,6 +165,7 @@ let findMaleAndFemale = (data) => {
       }
     }
   });
+
   return newArr.join('');
 };
 
@@ -184,8 +176,8 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  var shortest = data.reduce((bank, current) => Number(bank.height) < Number(current.height) ? bank : current, 0);
-  return shortest.name;
+  let selectedCharacter = data.reduce((a, b) => Number(a.height) < Number(b.height) ? a : b, 0)
+  return selectedCharacter.name
   }
 
 /* ------------------------------------------------------------------------------------------------
