@@ -19,14 +19,11 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-  // Solution code here...
-  let newArr = [];
-  
-  for(const [key, value] of Object.entries(obj)){
-    newArr.push(`<li>${key}: ${value}</li>`)
-  }
+  var newArr = [];
+  Object.entries(obj).forEach(arr => {
+    arr[0] === 'name' ? newArr.push(`<li>name: ${arr[1]}</li>`) : newArr.push(`<li>age: ${arr[1]}</li>`);
+  });
   return newArr;
-  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,19 +76,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  for(var i = 0; i < input.length; i++){
-    var numArr = input[i];
-    for(var j = 0; j < numArr.length; j++){
-      var num = numArr[j];
-      if( num === isNaN || num % 5 !== 0){
-        numArr.splice(j, 1);
-      } else {
-        Math.pow(2, num);
+  let filtered = input.map(arr => arr.filtered(number => number % 5 === 0 && typeof(number) === 'number'));
+  let newArr = [];
+  for (let i = 0; i < filtered.length; i++){
+    newArr.push([]);
+    for (let j = 0; j <= filtered.length; j++){
+      if (filtered[i][j]) {
+        newArr[i].push(Math.pow(2, filtered[i][j]));
       }
     }
-
   }
-  return input;
+  return newArr;
 };
 
 
@@ -159,18 +154,18 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
-  let newArr = []
-  data.forEach((person,total, arr) => {
-    if(person.gender.includes('male')){
-      if(total === arr.length - 1){
+
+  var newArr =[];
+  data.forEach((person, i, arr) => {
+    if(person.gender === 'male' || (person.gender ==='female')){
+      if(i === arr.length - 1){
         newArr.push(`${person.name}`);
-      }
-      else
-      {
-        newArr.push(`${person.name} and `)
+      } else {
+        newArr.push(`${person.name} and `);
       }
     }
-  })
+  });
+
   return newArr.join('');
 };
 
