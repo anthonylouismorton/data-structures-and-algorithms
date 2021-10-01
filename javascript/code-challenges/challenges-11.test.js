@@ -48,7 +48,7 @@ const count = (target, input) => {
   //   }
   // }
   var count = 0;
-  input.flat().filter(x => x === target ? count++ : count);
+  input.flat().filter(y => y === target ? count++ : count);
   return count;
 
 };
