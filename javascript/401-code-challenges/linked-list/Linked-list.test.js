@@ -1,7 +1,7 @@
 'use strict'
 
-const LinkedList = require('../Linked-list.js')
-const Node = require('../node.js')
+const LinkedList = require('./Linked-list.js')
+const Node = require('./node.js')
 
 describe('LinkedList test', () => {
   it('It should instantiate an empty linked list', () => {
