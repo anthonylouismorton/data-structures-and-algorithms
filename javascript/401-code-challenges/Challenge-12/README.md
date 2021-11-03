@@ -27,7 +27,7 @@ If pref is not "dog" or "cat" then return null.
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 enqueue - O(1)/constant  
-dequeue- O(n)/linear
+dequeue- O(1)/constant
 
 
 ## API
