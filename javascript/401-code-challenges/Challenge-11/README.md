@@ -1,0 +1,45 @@
+# stack-queue-pseudo
+<!-- Short summary or background information -->
+Create a PseudoQueue Class that utilizes two Stack instances to manage the queue. The PseudoQueue Class has two methods, enqueue and dequeue.
+
+## Challenge
+<!-- Description of the challenge -->
+Challenge Type: Code Challenge / Algorithm
+
+
+Feature Tasks  
+Create a new class called pseudo queue.  
+Do not use an existing Queue.  
+Instead, this PseudoQueue class will implement our standard queue interface (the two methods listed below),  
+Internally, utilize 2 Stack instances to create and manage the queue  
+
+
+Methods:  
+enqueue  
+Arguments: value  
+Inserts value into the PseudoQueue, using a first-in, first-out approach.  
+
+
+dequeue  
+Arguments: none  
+Extracts a value from the PseudoQueue, using a first-in, first-out approach.  
+
+
+NOTE: The Stack instances have only push, pop, and peek methods. You should use your own Stack implementation. Instantiate these Stack objects in your PseudoQueue constructor.  
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+enqueue - O(1)/constant  
+dequeue- O(n)/liner
+
+
+## API
+<!-- Description of each method publicly available to your Linked List -->
+enqueue  
+Arguments: value  
+Inserts value into the PseudoQueue, using a first-in, first-out approach.  
+
+
+dequeue  
+Arguments: none  
+Extracts a value from the PseudoQueue, using a first-in, first-out approach.  
