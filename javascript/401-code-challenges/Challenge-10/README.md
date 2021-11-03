@@ -1,4 +1,4 @@
-# linked-list-insertions
+# stack-and-queue
 <!-- Short summary or background information -->
 Create a Node, Stack, and Queue Class that allows you to create a Stacks and Queues. Create a push, pop, peek, and isEmpty method in the Stack Class. Create an enqueue, dequeue, peek, and is empty method in the Queue Class.
 
