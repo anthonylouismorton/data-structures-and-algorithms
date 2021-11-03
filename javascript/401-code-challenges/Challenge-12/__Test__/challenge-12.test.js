@@ -83,24 +83,7 @@ describe('Testing PsuedoQueue method)', () => {
     expect(newQueue.dequeue('rabbit')).toBeNull();
   });
 
-  // it('Can dequeue a mixture of dogs and cats', () => {
-  //   const newQueue = new AnimalShelter();
-  //   newQueue.enqueue('cat')
-  //   newQueue.enqueue('cat')
-  //   newQueue.enqueue('dog')
-  //   newQueue.enqueue('dog')
-  //   newQueue.enqueue('cat')
-  //   newQueue.enqueue('dog')
-  //   newQueue.dequeue('cat')
-  //   expect(newQueue.animalQueueStack).toEqual({"top": {"next": {"next": null, "value": "cat"}, "value": "cat"}})
-  //   newQueue.dequeue('dog')
-  //   expect(newQueue.animalQueueStack.top).toEqual(null)
-  //   expect(newQueue.catStack.top.value).toEqual('cat')
-  //   expect(newQueue.dogStack).toEqual()
-  //   newQueue.dequeue('cat')
 
-  //   ;
-  //   expect(newQueue.dogStack).toEqual();
   });
 
 
