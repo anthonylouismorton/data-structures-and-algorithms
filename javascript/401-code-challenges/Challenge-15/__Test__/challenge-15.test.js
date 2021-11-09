@@ -28,6 +28,7 @@ describe("Testing Binary Search Tree and Binary Tree)", () => {
     binarySearchTree.add(10);
     binarySearchTree.add(1);
     binarySearchTree.add(11);
+    binarySearchTree.add(1);
     expect(binarySearchTree.root.right.value).toEqual(11);
     expect(binarySearchTree.root.left.value).toEqual(1);
     expect(binarySearchTree.root.value).toEqual(10);
