@@ -16,17 +16,20 @@ class BinarySearchTree extends BinaryTree {
     let current = this.root;
 
     while(current){
+      if(value = current.value){
+        return new Error('Value already exists in the tree');
+      }
       if(value < current.value){
         if(current.left === null){
           current.left = newNode;
-          break;
+          return;
         }
         current = current.left
       }
       else{
         if(current.right === null){
           current.right = newNode;
-          break;
+          return;
         }
         current = current.right
       }
