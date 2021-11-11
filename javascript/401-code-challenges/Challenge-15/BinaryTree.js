@@ -13,9 +13,11 @@ class BinaryTree {
     //console.log(current.value);
     this.treeValues.push(current.value)
     if (current.left) {
+
       this.preOrder(current.left);
     }
     if (current.right) {
+      
       this.preOrder(current.right);
     }
     return this.treeValues;
