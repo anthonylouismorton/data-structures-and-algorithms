@@ -3,10 +3,10 @@
 Convert PsedoCode into working code that sorts an array of numbers. Should create a function that takes numbers and sorts them numerically.
 
 ## Blog
-[blog]()
+[blog](https://github.com/anthonylouismorton/data-structures-and-algorithms/blob/main/javascript/401-code-challenges/Challenge-26/BLOG.md)
 
 ## Code/Solution
-[code/solution]()
+[code/solution](https://github.com/anthonylouismorton/data-structures-and-algorithms/blob/main/javascript/401-code-challenges/Challenge-26/sortedInsertion.js)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
