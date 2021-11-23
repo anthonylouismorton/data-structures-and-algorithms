@@ -5,6 +5,9 @@ Convert PsedoCode into working code that sorts an array of numbers. Should creat
 ## Blog
 [blog]()
 
+## Code/Solution
+[code/solution]()
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 sortedInsertion =  time: logarithmic O(n^2) space: constant O(1)
