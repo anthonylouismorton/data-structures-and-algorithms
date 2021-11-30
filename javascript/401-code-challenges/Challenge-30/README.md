@@ -38,7 +38,8 @@ Returns: Index in the collection for that key
 ## API
 <!-- Description of each method publicly available in each of your hashtable -->
 Solution:
-[HashTable.js]()
+[HashTable.js](https://github.com/anthonylouismorton/data-structures-and-algorithms/blob/main/javascript/401-code-challenges/Challenge-30/HashTable.js)
 
 Test:
-[challenge-30.test.js]()
+[challenge-30.test.js](https://github.com/anthonylouismorton/data-structures-and-algorithms/blob/main/javascript/401-code-challenges/Challenge-30/__Test__/challenge-30.test.js)
+
