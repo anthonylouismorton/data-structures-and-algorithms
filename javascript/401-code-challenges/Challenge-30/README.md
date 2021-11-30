@@ -40,6 +40,6 @@ Returns: Index in the collection for that key
 Solution:
 [HashTable.js](https://github.com/anthonylouismorton/data-structures-and-algorithms/blob/main/javascript/401-code-challenges/Challenge-30/HashTable.js)
 
-
 Test:
 [challenge-30.test.js](https://github.com/anthonylouismorton/data-structures-and-algorithms/blob/main/javascript/401-code-challenges/Challenge-30/__Test__/challenge-30.test.js)
+
