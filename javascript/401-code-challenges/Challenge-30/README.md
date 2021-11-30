@@ -40,4 +40,5 @@ Returns: Index in the collection for that key
 Solution:
 [HashTable.js]()
 
+Test:
 [challenge-30.test.js]()
