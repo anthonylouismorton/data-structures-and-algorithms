@@ -16,8 +16,8 @@ Using your Hashmap implementation as a part of your algorithm, return a set of v
 ## API
 <!-- Description of each method publicly available in each of your hashtable -->
 Solution:
-[HashTable.js]()
+[tree-intersection.js](https://github.com/anthonylouismorton/data-structures-and-algorithms/blob/main/javascript/401-code-challenges/Challenge-32/tree-intersection.js)
 
 Test:
-[challenge-30.test.js]()
+[challenge-32.test.js](https://github.com/anthonylouismorton/data-structures-and-algorithms/blob/main/javascript/401-code-challenges/Challenge-32/__Test__/challenge-32.test.js)
 
