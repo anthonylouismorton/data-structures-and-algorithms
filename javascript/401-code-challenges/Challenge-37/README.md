@@ -6,7 +6,7 @@ Given a business trip itinerary, and an Alaska Airlines route map, is the trip p
 <!-- Description of the challenge -->
 Write a function called business trip  
 Arguments: graph, array of city names  
-Return: cost or null  
+Return: cost or null
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
