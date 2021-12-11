@@ -2,7 +2,6 @@
 
 const Edge = require('./edge.js')
 const Vertex = require('./vertex.js')
-const Stack = require('./Stack.js')
 
 class Graph {
   constructor() {
@@ -47,8 +46,6 @@ class Graph {
   }
 
   getNeighbors(vertex) {
-    console.log(this.adjacencyList)
-    console.log(vertex)
     if(!this.adjacencyList.has(vertex)) {
       throw new Error('GET NEIGHBOR ERROR :: Invalid vertex');
     }
@@ -102,26 +99,20 @@ class Graph {
     if(!startVertex){
       return 'there is no vertices in this graph'
     }
-    const stack = new Stack();
+    
     const visitedNodes = new Set();
-
-    stack.push(startVertex);
-    visitedNodes.add(startVertex);
-
-    console.log(stack.pop())
-    while(!stack.isEmpty()) {
-      let top = stack.pop();
-      console.log(top)
-      this.getNeighbors(top)
-      .filter(vertex => !visitedNodes.has(vertex))
-      .forEach(vertex => {
-        visitedNodes.add(vertex);
-        stack.push(vertex)
-      })
+    return this.depthHelper(startVertex, visitedNodes)
+  }
+  depthHelper(myVertex, visited){
+    visited.add(myVertex);
+    let neighbors = this.getNeighbors(myVertex)
+    for(let edge of neighbors){
+      let neighbor = edge.vertex;
+      if(!visited.has(neighbor)){
+        this.depthHelper(neighbor, visited)
+      }
     }
-
-    return visitedNodes;
+    return visited;
   }
 }
-
 module.exports = Graph;
